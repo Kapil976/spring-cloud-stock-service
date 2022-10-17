@@ -22,12 +22,12 @@ import com.kapil.model.Stock;
 @RequestMapping("/stock")
 public class StockController {
 
-	@Value("${server.port}")
-	private String port;
+	@Value("${my.package.name}")
+	private String name;
 
 	@GetMapping("/data")
 	public ResponseEntity<String> showStock() {
-		return ResponseEntity.ok("From Stock service " + port);
+		return ResponseEntity.ok("From Stock service " + name);
 	}
 
 	@GetMapping("/find/{id}")
